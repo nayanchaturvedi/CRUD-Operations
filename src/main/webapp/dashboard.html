@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students - Courses</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/form-validation.css" rel="stylesheet">
+    <link href="assets/css/dashboard.css" rel="stylesheet">
+
+</head>
+<body class="bg-light">
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Welcome</h2>
+    </div>
+    <p align="right"><a href="index.html">logout</a></p>
+<!--    FORM1  -->
+    <div class="col-md-8 order-md-1">
+        <button type="button" class="collapsible">Create Bill</button>
+        <form class="needs-validation-students" id="create-validation" novalidate >
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="description">Description</label>
+                                <input class="form-control" id="description" placeholder="Description" required type="text" value="">
+                                <div class="invalid-feedback">
+                                    Valid description is required.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="amount">Amount</label>
+                                <input class="form-control" id="amount" placeholder="Amount" required type="text" value="">
+                                <div class="invalid-feedback">
+                                    Valid amount is required.
+                                </div>
+                            </div>
+                        </div>
+            <div class="mb-3">
+                <label for="date">Date</label>
+                <input class="form-control" id="date" placeholder="Date" required type="date">
+                <div class="invalid-feedback">
+                    Please enter a valid date.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="status">Status</label>
+                    <input class="form-control" id="status" placeholder="Status" required type="text" value="">
+                    <div class="invalid-feedback">
+                        Please enter correct status.
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to create bill</button>
+            <p id="give_create_status"></p>
+        </form>
+    </div>
+    <br/>
+    <hr class="mb-4">
+
+<!--    FORM2 -->
+    <div class="col-md-8 order-md-1">
+        <button type="button" class="collapsible">Update Bill</button>
+        <form class="needs-validation-students" id="update-validation" novalidate>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="student_id">Student_id</label>
+                    <input class="form-control" id="student_id" placeholder="Student_id" required type="text" value="">
+                    <div class="invalid-feedback">
+                        Valid StudentId is required.
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="new_amount">Amount</label>
+                    <input class="form-control" id="new_amount" placeholder="Amount" required type="text" value="">
+                    <div class="invalid-feedback">
+                        Valid amount is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="new_status">Status</label>
+                    <input class="form-control" id="new_status" placeholder="Status" required type="text" value="">
+                    <div class="invalid-feedback">
+                        Please enter correct status.
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to update bill</button>
+            <p id="give_update_status"></p>
+        </form>
+    </div>
+    <hr class="mb-4">
+
+
+    <!--    FORM3  -->
+    <div class="col-md-8 order-md-1">
+        <button type="button" class="collapsible">Read Bills</button>
+        <form class="needs-validation-students" id="read-validation" novalidate>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="bill_id_read">Bill_id</label>
+                    <input class="form-control" id="bill_id_read" placeholder="Bill_id" required type="text" value="">
+                    <div class="invalid-feedback">
+                        Valid StudentId is required.
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to get bills</button>
+            <p id="give_read_status"></p>
+        </form>
+    </div>
+    <hr class="mb-4">
+
+    <!--    FORM4 -->
+    <div class="col-md-8 order-md-1">
+        <button type="button" class="collapsible">Delete Bill</button>
+        <form class="needs-validation-students" id="delete-validation" novalidate>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="student_id_delete">Student_id</label>
+                    <input class="form-control" id="student_id_delete" placeholder="Student_id" required type="text" value="">
+                    <div class="invalid-feedback">
+                        Valid StudentId is required.
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to delete bills</button>
+            <p id="give_delete_status"></p>
+        </form>
+    </div>
+    <hr class="mb-4">
+</div>
+<footer class="my-5 pt-5 text-muted text-center text-small">
+</footer>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/form-validation.js"></script>
+</body>
+</html>
